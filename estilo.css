@@ -1,0 +1,310 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    color: #333;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 50px 1fr 150px;
+    align-items: center;
+    background: #333;
+    color: white;
+    padding: 0 10px;
+    height: 40px;
+}
+
+.menu-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.user {
+    text-align: right;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* menu opp
+nav {
+    position: fixed;
+    top: 40px;
+    left: -200px;
+    width: 200px;
+    height: calc(100% - 40px);
+    background: white;
+    border-right: 1px solid #ccc;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: left 0.3s ease;
+}
+
+nav.open {
+    left: 0;
+}
+
+.close-btn {
+    align-self: flex-end;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    flex-grow: 1;
+}
+
+nav ul li {
+    margin: 15px 0;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.redes_sociales {
+    font-size: 14px;
+}
+
+
+*/
+main {
+    margin-left: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: margin-left 0.3s ease;
+}
+
+main.nav-open {
+    margin-left: 200px;
+}
+
+/* ============================
+    SECCIÓN PROMOCIONES
+============================ */
+.encabezado {
+    background: #b0b0b0;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.promociones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    /*
+    repeat- repite columnas
+    (auto-fit, autoajustable
+    minmax(120px, 1fr) --tamano min 120 px y el maximo de 1fr
+    );*/
+    gap: 15px;
+    background: white;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.promo_comida {
+    text-align: center;
+    font-size: 12px;
+}
+
+.promo_comida img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.promo_comida button {
+    background: #444;
+    border: none;
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+.seccion_comida {
+    background: white;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.clasificacion_comida,
+.Comida_mas_popular,
+.nuevos {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.grid_comida {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+}
+
+
+.comida_uno_restaurant1,
+.comida_dos_restaurant1,
+.comida_tres_restaurant1,
+.comida_uno_restaurant2,
+.comida_uno_restaurant3 {
+    background: #ccc;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: 11px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.grid_comida span {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2px 4px;
+    text-align: center;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*son 2 columnas, cada una ocupa una fracción igual*/
+    background: #444;
+    color: white;
+    padding: 15px 20px;
+    font-size: 12px;
+    margin-top: 50px;
+}
+
+footer div {
+    border-right: 1px solid #666;
+    padding-right: 20px;
+}
+
+footer div:last-child {
+    border: none;
+    padding-left: 20px;
+}
+
+
+.detalles_restaurantes {
+    background: #222;
+    color: white;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.infomacion_restaurantes img {
+    background: gray;
+    width: 120px;
+    height: 120px;
+    display: block;
+}
+
+.clalificacion_estrellas{
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.btn-order {
+    background: white;
+    color: black;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 14px;
+    width: 120px;
+}
+
+
+.formulario_para_la_orden {
+    background: white;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.formulario_para_la_orden label {
+    display: block;
+    margin: 10px 0 4px 0;
+    font-weight: bold;
+}
+
+.formulario_para_la_orden input,
+.formulario_para_la_orden textarea {
+    width: 100%;
+    padding: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border: 1px solid #ccc;
+}
+
+.formulario_para_la_orden textarea {
+    resize: vertical;
+    height: 60px;
+}
+
+.formulario_para_la_orden button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background: #888;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*    parte responsiva */
+@media (max-width: 700px) {
+    main {
+        margin-left: 0;
+    }
+
+    nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 10px 20px;
+        left: 0;
+    }
+
+    nav.open {
+        left: 0;
+    }
+
+    .restaurant-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-info img {
+        margin: 0 auto 10px auto;
+        display: block;
+    }
+}
