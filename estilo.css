@@ -15,74 +15,19 @@ header {
     height: 40px;
 }
 
-.menu-icon {
-    font-size: 20px;
-    cursor: pointer;
-}
 
-.title {
+.titulo_pagina {
     text-align: center;
     font-weight: bold;
 }
 
-.user {
+.clientes {
     text-align: right;
     font-size: 14px;
     cursor: pointer;
 }
 
-/* menu opp
-nav {
-    position: fixed;
-    top: 40px;
-    left: -200px;
-    width: 200px;
-    height: calc(100% - 40px);
-    background: white;
-    border-right: 1px solid #ccc;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: left 0.3s ease;
-}
-
-nav.open {
-    left: 0;
-}
-
-.close-btn {
-    align-self: flex-end;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-    flex-grow: 1;
-}
-
-nav ul li {
-    margin: 15px 0;
-}
-
-nav ul li a {
-    color: #333;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.redes_sociales {
-    font-size: 14px;
-}
-
-
-*/
-main {
+.contennido_principal {
     margin-left: 0;
     padding: 20px;
     box-sizing: border-box;
@@ -229,7 +174,7 @@ footer div:last-child {
     margin: 5px 0;
 }
 
-.btn-order {
+.btn-orden {
     background: white;
     color: black;
     border: none;
