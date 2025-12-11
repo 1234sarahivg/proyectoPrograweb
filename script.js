@@ -1,9 +1,4 @@
 
-
-        // ==============================
-        // SISTEMA PRINCIPAL DE LA APLICACIÓN
-        // ==============================
-
         const App = {
             // Estado de la aplicación
             state: {
