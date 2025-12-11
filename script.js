@@ -54,9 +54,9 @@
       description: "Refresco de cola, naranja o limón 500ml. Refrescante y frío." }
             ],
 
-            // ==============================
+ 
             // INICIALIZACIÓN
-            // ==============================
+      
             init() {
                 this.loadData();
                 this.setupEventListeners();
@@ -65,9 +65,9 @@
                 this.setupHamburgerMenu();
             },
 
-            // ==============================
+   
             // MANEJO DE DATOS
-            // ==============================
+      
             loadData() {
                 // Cargar carrito desde localStorage
                 const savedCart = localStorage.getItem('foodDeliveryCart');
@@ -260,9 +260,8 @@
                 return order;
             },
 
-            // ==============================
             // MANEJO DE USUARIO Y LOGIN
-            // ==============================
+            
             login(email, password) {
                 // Simulación de login
                 if (email && password) {
@@ -316,9 +315,9 @@
                 return true;
             },
 
-            // ==============================
-            // RENDERIZADO DE PÁGINAS
-            // ==============================
+           
+            // Renderizado de page
+         
             renderFoodPage() {
                 const container = document.querySelector('#food-page .food-grid');
                 if (!container) return;
