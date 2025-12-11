@@ -1,39 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A tu casa </title>
-     
+    <title>A tu casa - Delivery de Comida</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="estilo.css" />  
 </head>
 <body>
-    <link rel="stylesheet" href="estilo.css" />
-    <script src="script.js"></script> 
-     <div class="container">
+    <div class="container">
         <!-- Header -->
         <header>
-            <div class="logo">
+            <div class="logo" id="logo">
                 <i class="fas fa-home"></i>
                 <span>A tu casa</span>
             </div>
             
             <div class="header-right">
-                <div class="location">
+                <div class="location" id="location-btn">
                     <i class="fas fa-map-marker-alt"></i>
                     <span>La Paz, Bolivia</span>
                 </div>
                 
                 <div class="cart-icon" id="header-cart">
-                    <i class="fas fa-shopping-cart" style="font-size: 1.5rem; color: white;"></i>
+                    <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count" id="cart-count">0</span>
                 </div>
                 
-                <button class="menu-toggle" id="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <div class="hamburger-menu">
+                    <button class="hamburger-btn" id="hamburger-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
         </header>
+        
+        <!-- Menú Hamburguesa -->
+        <div class="menu-overlay" id="menu-overlay"></div>
+        <div class="menu-sidebar" id="menu-sidebar">
+            <div class="menu-header">
+                <div class="menu-user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="menu-user-info">
+                    <h3 id="menu-user-name">Invitado</h3>
+                    <p id="menu-user-email">Inicia sesión para continuar</p>
+                </div>
+            </div>
+            
+            <div class="menu-items">
+                <div class="menu-item" id="menu-home">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </div>
+                
+                <div class="menu-item" id="menu-food">
+                    <i class="fas fa-utensils"></i>
+                    <span>Comidas</span>
+                </div>
+                
+                <div class="menu-item" id="menu-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Carrito</span>
+                    <span class="notification-count" id="menu-cart-count" style="margin-left: auto; display: none;">0</span>
+                </div>
+                
+                <div class="menu-item" id="menu-orders">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Mis Pedidos</span>
+                </div>
+                
+                <div class="menu-item" id="menu-login">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Iniciar Sesión</span>
+                </div>
+                
+                <div class="menu-item" id="menu-manual">
+                    <i class="fas fa-book"></i>
+                    <span>Manual de Usuario</span>
+                </div>
+                
+                <div class="menu-item" id="menu-profile">
+                    <i class="fas fa-user-cog"></i>
+                    <span>Mi Perfil</span>
+                </div>
+                
+                <div class="menu-item" id="menu-settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Configuración</span>
+                </div>
+            </div>
+            
+            <div class="menu-footer">
+                <button class="btn-logout" id="menu-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar Sesión</span>
+                </button>
+            </div>
+        </div>
         
         <!-- Main Content -->
         <main>
@@ -44,106 +108,98 @@
                     <p class="hero-subtitle">Comidas • Promociones • Postres • Bebidas</p>
                 </div>
                 
-                <h2 class="section-title">
-                    COMIDAS
-                    <a href="#" class="see-more" data-page="food-page">Ver más <i class="fas fa-chevron-right"></i></a>
-                </h2>
                 
-                <div class="categories">
-                    <div class="category" data-page="food-page">
-                        <i class="fas fa-utensils"></i>
-                        <div class="category-name">Comidas</div>
-                    </div>
-                    <div class="category" data-page="promotions-page">
-                        <i class="fas fa-tag"></i>
-                        <div class="category-name">Promociones</div>
-                    </div>
-                    <div class="category">
-                        <i class="fas fa-ice-cream"></i>
-                        <div class="category-name">Postres</div>
-                    </div>
-                    <div class="category">
-                        <i class="fas fa-wine-glass-alt"></i>
-                        <div class="category-name">Bebidas</div>
-                    </div>
-                </div>
+                <h2 class="section-title">LO MÁS POPULAR</h2>
                 
-                <div class="promo-section" style="padding: 0 20px;">
-                    <h2 class="section-title">
-                        LO QUE ESTÁ A 30 MINUTOS DE TI
-                        <a href="#" class="see-more">Ver más <i class="fas fa-chevron-right"></i></a>
-                    </h2>
+                <div class="food-grid">
                     
-                    <div class="promo-card">
-                        <div class="promo-image">
-                            <i class="fas fa-bolt"></i>
+                    <div class="food-card" data-product="1">
+                        <div class="food-image">
+                            <i class="fas fa-pizza-slice"></i>
                         </div>
-                        <div class="promo-content">
-                            <h3 class="promo-title">Entrega rápida</h3>
-                            <p class="promo-desc">Disfruta de tus platillos favoritos en menos de 30 minutos</p>
-                            <a href="#" class="see-more">Ver más <i class="fas fa-chevron-right"></i></a>
+                        <div class="food-content">
+                            <h3 class="food-title">Pizza Familiar</h3>
+                            <div class="food-restaurant">Mr. Pizza</div>
+                            <div class="food-price">120 Bs</div>
+                            <button class="btn btn-primary btn-small add-to-cart-btn" data-product="1" style="margin-top: 10px;">
+                                <i class="fas fa-cart-plus"></i> Añadir
+                            </button>
                         </div>
                     </div>
-                </div>
-                
-                <div class="popular-section" style="padding: 0 20px;">
-                    <h2 class="section-title">
-                        LO MÁS POPULAR
-                        <a href="#" class="see-more">Ver más <i class="fas fa-chevron-right"></i></a>
-                    </h2>
+
+                    <!-- Puedes añadir más productos siguiendo el mismo patrón -->
+    <div class="food-card" data-product="7">
+        <div class="food-image">
+            <i class="fas fa-ice-cream"></i>
+        </div>
+        <div class="food-content">
+            <h3 class="food-title">Helado de Chocolate</h3>
+            <div class="food-restaurant">Dulce Tentación</div>
+            <div class="food-price">25 Bs</div>
+            <button class="btn btn-primary btn-small add-to-cart-btn" data-product="7" style="margin-top: 10px;">
+                <i class="fas fa-cart-plus"></i> Añadir
+            </button>
+        </div> </div>
+
                     
-                    <div class="food-grid">
-                        <div class="food-card" data-product="1">
-                            <div class="food-image">
-                                <i class="fas fa-pizza-slice"></i>
-                            </div>
-                            <div class="food-content">
-                                <h3 class="food-title">Pizza Familiar</h3>
-                                <div class="food-restaurant">Mr. Pizza</div>
-                                <div class="food-price">120 Bs</div>
-                            </div>
+                    <div class="food-card" data-product="2">
+                        <div class="food-image">
+                            <i class="fas fa-hamburger"></i>
+                        </div>
+                        <div class="food-content">
+                            <h3 class="food-title">Hamburguesa</h3>
+                            <div class="food-restaurant">Burger House</div>
+                            <div class="food-price">45 Bs</div>
+                            <button class="btn btn-primary btn-small add-to-cart-btn" data-product="2" style="margin-top: 10px;">
+                                <i class="fas fa-cart-plus"></i> Añadir
+                            </button>
                         </div>
                         
-                        <div class="food-card" data-product="2">
-                            <div class="food-image">
-                                <i class="fas fa-hamburger"></i>
-                            </div>
-                            <div class="food-content">
-                                <h3 class="food-title">Hamburguesa</h3>
-                                <div class="food-restaurant">Burger House</div>
-                                <div class="food-price">45 Bs</div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 
-                <div class="new-section" style="padding: 0 20px;">
-                    <h2 class="section-title">
-                        DISFRUTA ALGO NUEVO
-                        <a href="#" class="see-more">Ver más <i class="fas fa-chevron-right"></i></a>
-                    </h2>
-                    
-                    <div class="food-grid">
-                        <div class="food-card" data-product="3">
-                            <div class="food-image">
-                                <i class="fas fa-fish"></i>
-                            </div>
-                            <div class="food-content">
-                                <h3 class="food-title">Pescado a la plancha</h3>
-                                <div class="food-restaurant">Mar & Tierra</div>
-                                <div class="food-price">85 Bs</div>
-                            </div>
+                <h2 class="section-title">DISFRUTA ALGO NUEVO</h2>
+                
+                <div class="food-grid">
+                    <div class="food-card" data-product="3">
+                        <div class="food-image">
+                            <i class="fas fa-fish"></i>
                         </div>
-                        
-                        <div class="food-card" data-product="4">
-                            <div class="food-image">
-                                <i class="fas fa-cheese"></i>
-                            </div>
-                            <div class="food-content">
-                                <h3 class="food-title">Ensalada César</h3>
-                                <div class="food-restaurant">Fresh Garden</div>
-                                <div class="food-price">38 Bs</div>
-                            </div>
+                        <div class="food-content">
+                            <h3 class="food-title">Pescado a la plancha</h3>
+                            <div class="food-restaurant">Mar & Tierra</div>
+                            <div class="food-price">85 Bs</div>
+                            <button class="btn btn-primary btn-small add-to-cart-btn" data-product="3" style="margin-top: 10px;">
+                                <i class="fas fa-cart-plus"></i> Añadir
+                            </button>
+                        </div>
+                    </div>
+
+                     <div class="food-card" data-product="8">
+        <div class="food-image">
+            <i class="fas fa-wine-glass-alt"></i>
+        </div>
+        <div class="food-content">
+            <h3 class="food-title">Refresco Artesanal</h3>
+            <div class="food-restaurant">Bebidas Express</div>
+            <div class="food-price">15 Bs</div>
+            <button class="btn btn-primary btn-small add-to-cart-btn" data-product="8" style="margin-top: 10px;">
+                <i class="fas fa-cart-plus"></i> Añadir
+            </button>
+        </div>
+    </div>
+                    
+                    <div class="food-card" data-product="4">
+                        <div class="food-image">
+                            <i class="fas fa-cheese"></i>
+                        </div>
+                        <div class="food-content">
+                            <h3 class="food-title">Ensalada César</h3>
+                            <div class="food-restaurant">Fresh Garden</div>
+                            <div class="food-price">38 Bs</div>
+                            <button class="btn btn-primary btn-small add-to-cart-btn" data-product="4" style="margin-top: 10px;">
+                                <i class="fas fa-cart-plus"></i> Añadir
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -157,114 +213,7 @@
                 </div>
                 
                 <div class="food-grid">
-                    <div class="food-card" data-product="1">
-                        <div class="food-image">
-                            <i class="fas fa-pizza-slice"></i>
-                        </div>
-                        <div class="food-content">
-                            <h3 class="food-title">Pizza Familiar</h3>
-                            <div class="food-restaurant">Mr. Pizza</div>
-                            <div class="food-price">120 Bs</div>
-                        </div>
-                    </div>
-                    
-                    <div class="food-card" data-product="2">
-                        <div class="food-image">
-                            <i class="fas fa-hamburger"></i>
-                        </div>
-                        <div class="food-content">
-                            <h3 class="food-title">Hamburguesa</h3>
-                            <div class="food-restaurant">Burger House</div>
-                            <div class="food-price">45 Bs</div>
-                        </div>
-                    </div>
-                    
-                    <div class="food-card" data-product="3">
-                        <div class="food-image">
-                            <i class="fas fa-fish"></i>
-                        </div>
-                        <div class="food-content">
-                            <h3 class="food-title">Pescado a la plancha</h3>
-                            <div class="food-restaurant">Mar & Tierra</div>
-                            <div class="food-price">85 Bs</div>
-                        </div>
-                    </div>
-                    
-                    <div class="food-card" data-product="4">
-                        <div class="food-image">
-                            <i class="fas fa-cheese"></i>
-                        </div>
-                        <div class="food-content">
-                            <h3 class="food-title">Ensalada César</h3>
-                            <div class="food-restaurant">Fresh Garden</div>
-                            <div class="food-price">38 Bs</div>
-                        </div>
-                    </div>
-                    
-                    <div class="food-card" data-product="5">
-                        <div class="food-image">
-                            <i class="fas fa-drumstick-bite"></i>
-                        </div>
-                        <div class="food-content">
-                            <h3 class="food-title">Pollo a la brasa</h3>
-                            <div class="food-restaurant">Pollería "El Rico"</div>
-                            <div class="food-price">65 Bs</div>
-                        </div>
-                    </div>
-                    
-                    <div class="food-card" data-product="6">
-                        <div class="food-image">
-                            <i class="fas fa-bacon"></i>
-                        </div>
-                        <div class="food-content">
-                            <h3 class="food-title">Salchipapas</h3>
-                            <div class="food-restaurant">Snack House</div>
-                            <div class="food-price">30 Bs</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Promotions Page -->
-            <section id="promotions-page" class="page">
-                <div class="hero-section">
-                    <h1 class="hero-title">Promociones</h1>
-                    <p class="hero-subtitle">Las mejores ofertas para ti</p>
-                </div>
-                
-                <div class="food-grid">
-                    <div class="promo-card">
-                        <div class="promo-image" style="background: linear-gradient(45deg, #ff9f43, #ff6b6b);">
-                            <i class="fas fa-pizza-slice"></i>
-                        </div>
-                        <div class="promo-content">
-                            <h3 class="promo-title">2x1 en Pizzas</h3>
-                            <p class="promo-desc">Todos los martes y jueves en Mr. Pizza</p>
-                            <div class="food-price" style="display: inline-block; margin-top: 10px;">240 Bs → 120 Bs</div>
-                        </div>
-                    </div>
-                    
-                    <div class="promo-card">
-                        <div class="promo-image" style="background: linear-gradient(45deg, #10ac84, #1dd1a1);">
-                            <i class="fas fa-hamburger"></i>
-                        </div>
-                        <div class="promo-content">
-                            <h3 class="promo-title">Combo Burger + Papas</h3>
-                            <p class="promo-desc">En Burger House, incluye bebida gratis</p>
-                            <div class="food-price" style="display: inline-block; margin-top: 10px;">60 Bs → 45 Bs</div>
-                        </div>
-                    </div>
-                    
-                    <div class="promo-card">
-                        <div class="promo-image" style="background: linear-gradient(45deg, #5f27cd, #341f97);">
-                            <i class="fas fa-ice-cream"></i>
-                        </div>
-                        <div class="promo-content">
-                            <h3 class="promo-title">Postre Gratis</h3>
-                            <p class="promo-desc">En compras mayores a 100 Bs en cualquier restaurante</p>
-                            <div class="food-price" style="display: inline-block; margin-top: 10px;">Gratis</div>
-                        </div>
-                    </div>
+                    <!-- Los productos se generan dinámicamente -->
                 </div>
             </section>
             
@@ -288,7 +237,7 @@
                     
                     <p class="product-description" id="product-description">
                         Deliciosa pizza familiar con extra queso, pepperoni, champiñones y pimientos. 
-                        Masa artesanal horneada a la perfección. Incluye salsa de tomate natural y especias italianas.
+                        Masa artesanal horneada a la perfección.
                     </p>
                     
                     <div class="action-buttons">
@@ -309,14 +258,14 @@
                 
                 <div class="cart-container">
                     <div id="cart-items-container">
-                        <!-- Los elementos del carrito se generan dinámicamente aquí -->
+                        <!-- Los elementos del carrito se generan dinámicamente -->
                     </div>
                     
                     <div id="empty-cart-message" class="empty-cart">
                         <i class="fas fa-shopping-cart"></i>
                         <h3>Tu carrito está vacío</h3>
                         <p>Agrega productos desde el menú principal</p>
-                        <button class="btn btn-primary" id="go-to-menu" style="margin-top: 20px; width: auto; padding: 12px 30px;">Ver Menú</button>
+                        <button class="btn btn-primary" id="go-to-menu">Ver Menú</button>
                     </div>
                     
                     <div class="cart-summary" id="cart-summary" style="display: none;">
@@ -333,7 +282,7 @@
                             <span class="summary-total" id="cart-total">0.00</span> Bs
                         </div>
                         
-                        <button class="btn btn-primary" id="checkout-btn" style="margin-top: 20px;">PROCEDER AL PAGO</button>
+                        <button class="btn btn-primary" id="checkout-btn">PROCEDER AL PAGO</button>
                     </div>
                 </div>
             </section>
@@ -350,12 +299,12 @@
                     <div class="payment-methods">
                         <h3 class="payment-title">SELECCIONE LA FORMA DE PAGO:</h3>
                         
-                        <div class="payment-option active" data-payment="card">
+                        <div class="payment-option active" id="payment-card">
                             <i class="far fa-credit-card"></i>
                             <span>TARJETA</span>
                         </div>
                         
-                        <div class="payment-option" data-payment="qr">
+                        <div class="payment-option" id="payment-qr">
                             <i class="fas fa-qrcode"></i>
                             <span>QR</span>
                         </div>
@@ -389,14 +338,14 @@
                         </div>
                     </div>
                     
-                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                        <button class="btn btn-secondary" id="cancel-payment" style="flex: 1; min-width: 120px;">CANCELAR</button>
-                        <button class="btn btn-primary" id="process-payment" style="flex: 1; min-width: 120px;">REALIZAR PAGO</button>
+                    <div class="modal-actions">
+                        <button class="btn btn-secondary" id="cancel-payment">CANCELAR</button>
+                        <button class="btn btn-primary" id="process-payment">REALIZAR PAGO</button>
                     </div>
                 </div>
             </section>
             
-            <!-- Orders History Page -->
+            <!-- Orders Page -->
             <section id="orders-page" class="page">
                 <div class="hero-section">
                     <h1 class="hero-title">Mis Pedidos</h1>
@@ -404,82 +353,244 @@
                 </div>
                 
                 <div class="orders-container">
-                    <div class="order-item">
-                        <div class="order-info">
-                            <h3>Pizza Familiar</h3>
-                            <p>Mr. Pizza • 2 unidades</p>
-                            <p>15 de octubre, 2023 • 18:30</p>
-                        </div>
-                        <div class="order-status status-delivered">ENTREGADO</div>
-                        <div class="order-price">240 Bs</div>
+                    <div id="orders-container">
+                        <!-- Los pedidos se generan dinámicamente -->
                     </div>
                     
-                    <div class="order-item">
-                        <div class="order-info">
-                            <h3>Hamburguesa + Papas</h3>
-                            <p>Burger House • 1 unidad</p>
-                            <p>14 de octubre, 2023 • 12:15</p>
-                        </div>
-                        <div class="order-status status-delivered">ENTREGADO</div>
-                        <div class="order-price">45 Bs</div>
-                    </div>
-                    
-                    <div class="order-item">
-                        <div class="order-info">
-                            <h3>Pescado a la plancha</h3>
-                            <p>Mar & Tierra • 1 unidad</p>
-                            <p>13 de octubre, 2023 • 20:00</p>
-                        </div>
-                        <div class="order-status status-cancelled">CANCELADO</div>
-                        <div class="order-price">85 Bs</div>
-                    </div>
-                    
-                    <div class="order-item">
-                        <div class="order-info">
-                            <h3>Ensalada César</h3>
-                            <p>Fresh Garden • 3 unidades</p>
-                            <p>12 de octubre, 2023 • 13:45</p>
-                        </div>
-                        <div class="order-status status-delivered">ENTREGADO</div>
-                        <div class="order-price">114 Bs</div>
+                    <div id="empty-orders-message" class="empty-cart">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h3>No tienes pedidos anteriores</h3>
+                        <p>Realiza tu primer pedido desde el menú principal</p>
+                        <button class="btn btn-primary" id="go-to-menu-orders">Ver Menú</button>
                     </div>
                 </div>
             </section>
             
-            <!-- Registration Page -->
+            <!-- Login Page -->
+            <section id="login-page" class="page">
+                <div class="login-container">
+                    <div class="login-card">
+                        <h2 class="login-title">Iniciar Sesión</h2>
+                        <p class="login-subtitle">Ingresa a tu cuenta para continuar</p>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="login-email">CORREO ELECTRÓNICO:</label>
+                            <input type="email" id="login-email" class="form-input" placeholder="tu@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="login-password">CONTRASEÑA:</label>
+                            <input type="password" id="login-password" class="form-input" placeholder="••••••••">
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="remember-me">
+                            <label for="remember-me">Recordar mis datos</label>
+                        </div>
+                        
+                        <button class="btn btn-primary" id="login-btn">INICIAR SESIÓN</button>
+                        
+                        <div class="divider">
+                            <span>O continúa con</span>
+                        </div>
+                        
+                        <div class="social-login">
+                            <button class="btn-social google" id="login-google">
+                                <i class="fab fa-google"></i>
+                                <span>Continuar con Google</span>
+                            </button>
+                            
+                            <button class="btn-social facebook" id="login-facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Continuar con Facebook</span>
+                            </button>
+                        </div>
+                        
+                        <div class="register-link">
+                            ¿No tienes cuenta? <a href="#" id="register-link">Regístrate aquí</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Register Page -->
             <section id="register-page" class="page">
+                <div class="login-container">
+                    <div class="login-card">
+                        <h2 class="login-title">Crear Cuenta</h2>
+                        <p class="login-subtitle">Regístrate para disfrutar de todos los beneficios</p>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="register-names">NOMBRES:</label>
+                            <input type="text" id="register-names" class="form-input" placeholder="Ingresa tus nombres">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="register-lastnames">APELLIDOS:</label>
+                            <input type="text" id="register-lastnames" class="form-input" placeholder="Ingresa tus apellidos">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="register-email">CORREO ELECTRÓNICO:</label>
+                            <input type="email" id="register-email" class="form-input" placeholder="tu@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="register-phone">TELÉFONO:</label>
+                            <input type="tel" id="register-phone" class="form-input" placeholder="+591 12345678">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="register-password">CONTRASEÑA:</label>
+                            <input type="password" id="register-password" class="form-input" placeholder="••••••••">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="register-confirm-password">CONFIRMAR CONTRASEÑA:</label>
+                            <input type="password" id="register-confirm-password" class="form-input" placeholder="••••••••">
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">Acepto los <a href="#" style="color: var(--primary-color);">Términos y Condiciones</a></label>
+                        </div>
+                        
+                        <button class="btn btn-primary" id="register-btn">CREAR CUENTA</button>
+                        
+                        <div class="register-link" style="margin-top: 20px;">
+                            ¿Ya tienes cuenta? <a href="#" id="login-link">Inicia sesión aquí</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Profile Page -->
+            <section id="profile-page" class="page">
                 <div class="hero-section">
-                    <h1 class="hero-title">A tu casa</h1>
-                    <p class="hero-subtitle">Completa tu registro</p>
+                    <h1 class="hero-title">Mi Perfil</h1>
+                    <p class="hero-subtitle">Administra tu cuenta y preferencias</p>
                 </div>
                 
                 <div class="form-container">
                     <div class="form-group">
-                        <label class="form-label" for="nombres">NOMBRES:</label>
-                        <input type="text" id="nombres" class="form-input" placeholder="Ingresa tus nombres">
+                        <label class="form-label" for="profile-nombres">NOMBRES:</label>
+                        <input type="text" id="profile-nombres" class="form-input" value="Juan" placeholder="Ingresa tus nombres">
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label" for="apellidos">APELLIDOS:</label>
-                        <input type="text" id="apellidos" class="form-input" placeholder="Ingresa tus apellidos">
+                        <label class="form-label" for="profile-apellidos">APELLIDOS:</label>
+                        <input type="text" id="profile-apellidos" class="form-input" value="Pérez" placeholder="Ingresa tus apellidos">
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label" for="correo">CORREO:</label>
-                        <input type="email" id="correo" class="form-input" placeholder="ejemplo@correo.com">
+                        <label class="form-label" for="profile-correo">CORREO:</label>
+                        <input type="email" id="profile-correo" class="form-input" value="juan@ejemplo.com" placeholder="ejemplo@correo.com">
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label" for="direccion">DIRECCIÓN ACTUAL:</label>
-                        <input type="text" id="direccion" class="form-input" placeholder="Ingresa tu dirección">
+                        <label class="form-label" for="profile-direccion">DIRECCIÓN ACTUAL:</label>
+                        <input type="text" id="profile-direccion" class="form-input" value="Av. Bolívar 123, La Paz" placeholder="Ingresa tu dirección">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="profile-telefono">TELÉFONO:</label>
+                        <input type="tel" id="profile-telefono" class="form-input" value="+591 12345678" placeholder="Ingresa tu teléfono">
                     </div>
                     
                     <div class="checkbox-group">
-                        <input type="checkbox" id="guardar-direccion">
-                        <label for="guardar-direccion">GUARDAR DIRECCIÓN</label>
+                        <input type="checkbox" id="notifications" checked>
+                        <label for="notifications">Recibir notificaciones de ofertas</label>
                     </div>
                     
-                    <button class="btn btn-primary" id="finalizar-registro">FINALIZAR REGISTRO</button>
+                    <button class="btn btn-primary" id="save-profile">GUARDAR CAMBIOS</button>
+                </div>
+            </section>
+            
+            <!-- Manual Page -->
+            <section id="manual-page" class="page">
+                <div class="hero-section">
+                    <h1 class="hero-title">Manual de Usuario</h1>
+                    <p class="hero-subtitle">Guías y documentación de la aplicación</p>
+                </div>
+                
+                <div class="manual-container">
+                    <div class="manual-card">
+                        <h3 class="manual-title">
+                            <i class="fas fa-file-pdf"></i>
+                            Manual de Usuario Básico
+                        </h3>
+                        <p class="manual-description">
+                            Guía completa para usar todas las funcionalidades de la aplicación de delivery. 
+                            Incluye instrucciones paso a paso para realizar pedidos, gestionar tu cuenta y más.
+                        </p>
+                        
+                        <div class="pdf-preview">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="pdf-info">
+                                <h4>Manual_Usuario_Basico.pdf</h4>
+                                <p>Documento PDF • 2.4 MB</p>
+                                <button class="btn btn-primary btn-small" id="download-manual">
+                                    <i class="fas fa-download"></i> Descargar PDF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="manual-card">
+                        <h3 class="manual-title">
+                            <i class="fas fa-file-pdf"></i>
+                            Guía de Pago y Seguridad
+                        </h3>
+                        <p class="manual-description">
+                            Información sobre métodos de pago, seguridad de transacciones y protección de datos personales. 
+                            Aprende a realizar pagos de forma segura en nuestra plataforma.
+                        </p>
+                        
+                        <div class="pdf-preview">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="pdf-info">
+                                <h4>Guia_Pago_Seguridad.pdf</h4>
+                                <p>Documento PDF • 1.8 MB</p>
+                                <button class="btn btn-primary btn-small" id="download-guide">
+                                    <i class="fas fa-download"></i> Descargar PDF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="manual-card">
+                        <h3 class="manual-title">
+                            <i class="fas fa-question-circle"></i>
+                            Preguntas Frecuentes
+                        </h3>
+                        <p class="manual-description">
+                            Resuelve tus dudas más comunes sobre el uso de la aplicación, entregas, pagos y más.
+                        </p>
+                        
+                        <div class="form-group">
+                            <label class="form-label">¿Cómo realizo un pedido?</label>
+                            <p style="color: var(--gray-color); margin-top: 5px;">
+                                1. Selecciona los productos de tu preferencia<br>
+                                2. Añádelos al carrito<br>
+                                3. Revisa tu pedido en el carrito<br>
+                                4. Procede al pago y confirma
+                            </p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">¿Qué métodos de pago aceptan?</label>
+                            <p style="color: var(--gray-color); margin-top: 5px;">
+                                Aceptamos tarjeta de crédito/débito y pagos QR a través de aplicaciones móviles.
+                            </p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">¿Cuál es el tiempo de entrega?</label>
+                            <p style="color: var(--gray-color); margin-top: 5px;">
+                                El tiempo promedio es de 30-45 minutos, dependiendo de tu ubicación y tráfico.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -506,8 +617,42 @@
         </nav>
     </div>
 
-    
-          
-    
+    <!-- Modal de Confirmación -->
+    <div class="modal" id="confirmation-modal">
+        <div class="modal-content">
+            <h3 class="modal-title" id="modal-title">Confirmar acción</h3>
+            <p id="modal-message">¿Estás seguro de que deseas realizar esta acción?</p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="modal-cancel">Cancelar</button>
+                <button class="btn btn-primary" id="modal-confirm">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Ubicación -->
+    <div class="modal" id="location-modal">
+        <div class="modal-content">
+            <h3 class="modal-title">Cambiar ubicación</h3>
+            <div class="form-group">
+                <label class="form-label">CIUDAD:</label>
+                <select class="form-input" id="city-select">
+                    <option value="La Paz">La Paz</option>
+                    <option value="Cochabamba">Cochabamba</option>
+                    <option value="Santa Cruz">Santa Cruz</option>
+                    <option value="Sucre">Sucre</option>
+                    <option value="Oruro">Oruro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label">DIRECCIÓN ESPECÍFICA:</label>
+                <input type="text" class="form-input" id="specific-address" placeholder="Ej: Calle 123, Zona Central">
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="location-cancel">Cancelar</button>
+                <button class="btn btn-primary" id="location-save">Guardar</button>
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
 </body>
 </html>
