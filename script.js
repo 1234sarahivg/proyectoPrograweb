@@ -120,8 +120,8 @@
                 
                 // Abrir menú
                 hamburgerBtn.addEventListener('click', (e) => {
-    e.preventDefault();  // ← Línea nueva
-    e.stopPropagation(); // Esta ya la tenías
+    e.preventDefault();  
+    e.stopPropagation(); 
     menuOverlay.classList.toggle('active');
     menuSidebar.classList.toggle('active');
 });
